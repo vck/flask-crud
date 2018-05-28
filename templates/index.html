@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block body%}
+
+<body>
+
+   <div class="container">
+    
+   {%if post%}
+   {%for p in post%}
+      <h3>{{p[1]}}</h3>
+      <h5>{{p[2]}}</h5>
+   {%endfor%}
+   {%else%}
+       <h5>no latest post. <a class="btn btn-primary" href="/add">add post</a></h5>
+   {%endif%}
+    </div>
+
+</body>
+
+{%endblock%}

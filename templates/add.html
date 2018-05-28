@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{%block body%}
+<body>
+
+   <div class="container">
+      <form method=post action=/add>
+      <input type=text name=title>
+      <textarea type=text rows=30 columns=100 name=body></textarea>
+      <input type=submit class="btn btn-primary"name="send" value="post">
+      </form>
+   </div>
+</body>
+{%endblock%}		

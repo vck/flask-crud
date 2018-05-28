@@ -1,0 +1,40 @@
+{% extends "base.html"%}
+{% block body %}
+
+<body>
+<div class="container">
+
+   {% if all_post %}
+   <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">title</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for post in all_post %}
+    <tr>
+      <td><a href="/post/{{post[0]}}">{{post[0]}}</a></td>
+      <td>{{post[1]}}</td>
+      <td>
+           <form class="form-inline" action="/delete/{{post[0]}}" method=post>
+              <input type="submit" class="btn btn-danger" value="delete"></input> 
+           </form>
+           <form class="form-inline" action="/edit/{{post[0]}}" method=post>
+              <input type="submit" class="btn btn-primary" value="edit"></input>
+           </form>
+      </td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+   <a href="/add" class="btn btn-primary">new post</a>
+   {%else%} 
+   <a href="/add" class="btn btn-primary">new post</a>
+   {% endif %}
+
+</div>
+{% endblock %}
+
